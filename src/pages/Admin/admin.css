@@ -3,7 +3,6 @@
 }
 .admins_table{
     display: flex;
-    height: 598px;
     width: 100%;
     flex-direction: column;
     justify-content: center;

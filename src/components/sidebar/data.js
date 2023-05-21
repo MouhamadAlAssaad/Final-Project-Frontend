@@ -10,39 +10,44 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 // Sidebar Data
 export const SidebarData = [
   {
-    path: "Dashboard",
+    path: "dashboard-home",
     icon: DashboardIcon,
     heading: "Dashboard",
   },
   {
-    path: "Admin",
+    path: "dashboard-Admin",
     icon: AdminPanelSettingsIcon,
     heading: "Admin",
   },
   {
-    path: "Patient",
+    path: "dashboard-Patient",
     icon: Face3Icon,
     heading: "Patients",
   },
   {
-    path: "Treatment",
+    path: "dashboard-Treatment",
     icon: VaccinesIcon,
     heading: "Treatments",
   },
   {
-    path: "Newborn",
+    path: "dashboard-Newborn",
     icon: ChildCareIcon,
     heading: "NewBorns",
   },
   {
-    path: "Expenses",
+    path: "dashboard-Expenses",
     icon: ShoppingCartCheckoutIcon,
     heading: "Expenses",
   },
   {
-    path: "Income",
+    path: "dashboard-Income",
     icon: AddShoppingCartIcon,
     heading: "Incomes",
+  },
+  {
+    path: "dashboard-Appointment",
+    icon: AddShoppingCartIcon,
+    heading: "Appointment",
   },
 
   

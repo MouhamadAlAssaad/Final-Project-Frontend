@@ -5,18 +5,18 @@ import { TextField, Button } from "@mui/material";
 import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-import "./income.css";
+import "./appointment.css";
 
-function Income() {
+function Appointment() {
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
-    description: "",
-    amount: "",
+    first_name: "",
+    last_name: "",
     date: "",
   });
   const [DataPost, SetPostData] = useState({
-    description: "",
-    amount: "",
+    first_name: "",
+    last_name: "",
     date: "",
   });
   const [DataEdit, SetEditData] = useState(null);
@@ -59,7 +59,7 @@ function Income() {
     responsive: "simple",
     selectableRows: "none",
     search: true,
-    searchPlaceholder: "Search for Income",
+    searchPlaceholder: "Search for Appointment",
     download: true,
     print: true,
     pagination: true,
@@ -76,21 +76,17 @@ function Income() {
       },
     },
     {
-      name: "description",
-      label: "Description",
+      name: "first_name",
+      label: "First Name",
     },
     {
-      name: "amount",
-      label: "Amount",
+      name: "last_name",
+      label: "Last Name ",
     },
     {
       name: "date",
-      label: "Date",
+      label: "Date ",
     },
-    // {
-    //   name: "status",
-    //   label: "status",
-    // },
     {
       name: "actions",
       label: "Actions",
@@ -107,11 +103,10 @@ function Income() {
                   onClick={() => {
                     axios
                       .get(
-                        `${process.env.REACT_APP_URL}/income/getIncomeById/${tableMeta.rowData[0]}`
+                        `${process.env.REACT_APP_URL}/appointment/getAppoitment/${tableMeta.rowData[0]}`
                       )
                       .then((response) => {
-                        console.log(response)
-                        setDataById(response.data.data);
+                        setDataById(response.data.response);
                         setId(tableMeta.rowData[0]);
                         show();
                         showiconAdd();
@@ -140,7 +135,7 @@ function Income() {
                     if (result.isConfirmed) {
                       axios
                         .delete(
-                          `${process.env.REACT_APP_URL}/income/deleteIncome/${tableMeta.rowData[0]}`
+                          `${process.env.REACT_APP_URL}/appointment/deleteApointment/${tableMeta.rowData[0]}`
                         )
                         .then((response) => {
                           console.log(response);
@@ -164,7 +159,7 @@ function Income() {
   console.log(Id);
   const getData = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}/income/getIncome/`)
+      .get(`${process.env.REACT_APP_URL}/appointment/`)
       .then((response) => {
         console.log(response);
         setData(response.data.response);
@@ -189,7 +184,7 @@ function Income() {
 
   const EditData = () => {
     axios
-      .put(`${process.env.REACT_APP_URL}/income/updateIncome/${Id}`, DataEdit)
+      .put(`${process.env.REACT_APP_URL}/appointment/update/${Id}`, DataEdit)
       .then((res) => {
         console.log(res);
         getData();
@@ -209,13 +204,13 @@ function Income() {
   };
 
   return (
-    <div className="incomessss">
+    <div className="treatmentss">
       <div className="none">
-        {/* for add income */}
+        {/* for add treatment */}
         {visibleAdd && (
-          <form> 
+          <form>
             <div className="head-form">
-              <h2>Add Income</h2>
+              <h2>Add Appointment</h2>
               <button
                 onClick={() => {
                   show();
@@ -226,42 +221,36 @@ function Income() {
                 x
               </button>
             </div>
-            <label htmlFor="description"> Description</label>
+            <label htmlFor="first_name"> First Name</label>
             <TextField
               type="text"
-              name="description"
+              name="first_name"
               required="required"
               onChange={handelChangePost}
             />
-            <label htmlFor="amount"> Amount </label>
+            <label htmlFor="last_name"> Last Name </label>
             <TextField
               type="text"
-              name="amount"
+              name="last_name"
               required="required"
               onChange={handelChangePost}
             />
             <label htmlFor="date"> Date </label>
             <TextField
-              type="date"
+              type="datetime-local"
               name="date"
+              required="required"
               onChange={handelChangePost}
             />
-            {/* <label htmlFor="status"> status</label>
-            <TextField
-              type="text"
-              name="status"
-              onChange={handelChangePost}
-            />{" "} */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              onChange={handelChangePost}
-            /> */}
+
             <Button
               variant="outlined"
               onClick={() => {
-                if (DataPost.description === "" || DataPost.amount === "" || DataPost.date === "") {
+                if (
+                  DataPost.first_name === "" ||
+                  DataPost.last_name === "" ||
+                  DataPost.date === ""
+                ) {
                   Swal.fire({
                     title: "field is Empty !",
                     icon: "warning",
@@ -270,7 +259,7 @@ function Income() {
                 } else {
                   axios
                     .post(
-                      `${process.env.REACT_APP_URL}/income/addIncome`,
+                      `${process.env.REACT_APP_URL}/appointment/addAppoitment`,
                       DataPost
                     )
                     .then((res) => {
@@ -281,7 +270,7 @@ function Income() {
                       console.log(err.message);
                     });
                   Swal.fire({
-                    title: "Expense added",
+                    title: "Treatment created",
                     icon: "success",
                     iconColor: "#d0e9e7",
                     confirmButtonColor: "#447695",
@@ -293,11 +282,11 @@ function Income() {
             </Button>
           </form>
         )}
-        {/* for edit income */}
+        {/* for edit Appoitment */}
         {visibleEdit && (
           <form>
             <div className="head-form">
-              <h2>Edit Income </h2>
+              <h2>Edit Appoitment </h2>
               <button
                 onClick={() => {
                   show();
@@ -309,51 +298,38 @@ function Income() {
                 x
               </button>
             </div>
-            <label htmlFor="description"> Description</label>
+            <label htmlFor="first_name">First Name</label>
             <TextField
               type="text"
-              name="description"
+              name="first_name"
               onChange={handelChangeEdit}
-              defaultValue={DataById.description}
+              defaultValue={DataById.first_name}
             />
-            <label htmlFor="amount"> Amount</label>
+            <label htmlFor="last_name"> Last Name</label>
             <TextField
               type="text"
-              name="amount"
-              defaultValue={DataById.amount}
+              name="last_name"
+              defaultValue={DataById.last_name}
               onChange={handelChangeEdit}
-            />
-            <label htmlFor="date"> Date</label>
+            />{" "}
+            <label htmlFor="date"> Last Name</label>
             <TextField
-              type="date"
+              type="datetime-local"
               name="date"
               defaultValue={DataById.date}
               onChange={handelChangeEdit}
             />
-            {/* <label htmlFor="status"> Status</label>
-            <TextField
-              type="text"
-              name="status"
-              defaultValue={DataById.status}
-              onChange={handelChangeEdit}
-            /> */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              defaultValue={DataById.patient_id}
-              onChange={handelChangeEdit}
-            /> */}
             <Button variant="outlined" onClick={EditData}>
-              Edit Income
+              Edit Appointment
             </Button>
           </form>
         )}
       </div>
-      <div className="income_table">
-       
-          <h3 className="pagetitle">Income</h3>
-        
+      <div className="treatment_table">
+        <div>
+          {" "}
+          <h3 className="pagetitle">Appointment</h3>
+        </div>
 
         <div className="table_mui">
           <MUIDataTable
@@ -369,7 +345,7 @@ function Income() {
                     showicon();
                   }}
                 >
-                  + Add Income
+                  + Add Appointment
                 </Button>
               )
             }
@@ -380,6 +356,4 @@ function Income() {
   );
 }
 
-export default Income;
-
-
+export default Appointment;

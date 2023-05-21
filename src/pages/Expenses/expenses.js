@@ -59,7 +59,7 @@ function Expenses() {
     responsive: "simple",
     selectableRows: "none",
     search: true,
-    searchPlaceholder: "Search for Income",
+    searchPlaceholder: "Search for Expense",
     download: true,
     print: true,
     pagination: true,

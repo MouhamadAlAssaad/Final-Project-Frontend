@@ -5,11 +5,17 @@ import { motion } from "framer-motion";
 import { SidebarData } from "./data";
 import { Navigate, NavLink } from "react-router-dom";
 import "./sidebar.css";
+import { useLocation } from "react-router-dom";
+import logo from "../images/logo.svg";
 
 const Sidebar = ({ userData }) => {
   const [selected, setSelected] = useState();
   const [expanded, setExpanded] = useState(false);
   const [loggedOut, setLoggedOut] = useState(false);
+
+  const location = useLocation().pathname;
+  if (location === "/" || location === "/login" || location === "/home")
+    return null;
 
   const sidebarVariants = {
     true: {
@@ -43,13 +49,10 @@ const Sidebar = ({ userData }) => {
           variants={sidebarVariants}
           animate={window.innerWidth <= 800 ? `${expanded}` : ""}
         >
-          {/* logo
-          <div className="side-comp__logo">
-            <img src={Logo} alt="logo" />
+          <div className="sidebar-logo">
+            <img src={logo} width="100%" height="100%" />
+          </div>
         
-          </div> */}
-
-          {/* menu */}
           <div className="side-comp__menu">
             {SidebarData.map((item, index) => {
               return (

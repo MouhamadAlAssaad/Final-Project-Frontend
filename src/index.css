@@ -12,13 +12,20 @@ code {
     monospace;
 }
 :root {
-  --primary: #ffffff;
-  --secondary: #06023b;
-  --accent: #0097b2;
-  --third: #e2eaf2;
-
+  /*
+  --primary: #ec9682;
+  --secondary: #684969;
+  --accent: #80cdcc;
+  --third: #005275;
+*/
+--secondary: #ec9682;
+  --primary: #684969;
+  --primary: #fff;
+  --accent: #80cdcc;
+  --third: #005275;
+  
 }
 html {
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
   height: 100%;
 }

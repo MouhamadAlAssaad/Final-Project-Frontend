@@ -1,0 +1,12 @@
+.main-dashboard {
+    display: flex; 
+    gap: 2rem;
+}
+.dashboard-pages{
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    background-image: url('../../components/images/brains.svg');
+    
+}

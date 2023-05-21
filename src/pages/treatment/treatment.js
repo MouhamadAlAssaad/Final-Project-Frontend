@@ -81,14 +81,6 @@ function Treatment() {
       name: "type",
       label: "type",
     },
-    // {
-    //   name: "last_name",
-    //   label: "last_name",
-    // },
-    // {
-    //   name: "status",
-    //   label: "status",
-    // },
     {
       name: "actions",
       label: "Actions",
@@ -208,9 +200,9 @@ function Treatment() {
   return (
     <div className="treatmentss">
       <div className="none">
-        {/* for add expense */}
+        {/* for add treatment */}
         {visibleAdd && (
-          <form> 
+          <form>
             <div className="head-form">
               <h2>Add Treatment</h2>
               <button
@@ -237,24 +229,7 @@ function Treatment() {
               required="required"
               onChange={handelChangePost}
             />
-            {/* <label htmlFor="last_name"> Last Name</label>
-            <TextField
-              type="text"
-              name="last_name"
-              onChange={handelChangePost}
-            />
-            <label htmlFor="status"> status</label>
-            <TextField
-              type="text"
-              name="status"
-              onChange={handelChangePost}
-            />{" "} */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              onChange={handelChangePost}
-            /> */}
+
             <Button
               variant="outlined"
               onClick={() => {
@@ -290,10 +265,10 @@ function Treatment() {
             </Button>
           </form>
         )}
-        {/* for edit expense */}
+        {/* for edit treatment */}
         {visibleEdit && (
           <form>
-            {console.log("bataaaataaaaa",DataById)}
+            {console.log("bataaaataaaaa", DataById)}
             <div className="head-form">
               <h2>Edit Treatment </h2>
               <button
@@ -321,27 +296,6 @@ function Treatment() {
               defaultValue={DataById.type}
               onChange={handelChangeEdit}
             />
-            {/* <label htmlFor="last_name"> Last Name</label>
-            <TextField
-              type="text"
-              name="last_name"
-              defaultValue={DataById.last_name}
-              onChange={handelChangeEdit}
-            />
-            <label htmlFor="status"> Status</label>
-            <TextField
-              type="text"
-              name="status"
-              defaultValue={DataById.status}
-              onChange={handelChangeEdit}
-            /> */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              defaultValue={DataById.patient_id}
-              onChange={handelChangeEdit}
-            /> */}
             <Button variant="outlined" onClick={EditData}>
               Edit Treatment
             </Button>

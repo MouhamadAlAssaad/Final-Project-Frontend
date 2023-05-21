@@ -1,40 +1,41 @@
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Select, MenuItem } from "@mui/material";
 import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./newborn.css";
 
 function Newborn() {
+  const [DataPatient, setDataPatient] = useState([]);
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
     first_name: "",
     middle_name: "",
     last_name: "",
     status: "",
-    // patient_id: "",
+    patient_id: "",
   });
   const [DataPost, SetPostData] = useState({
     first_name: "",
     middle_name: "",
     last_name: "",
     status: "",
-    // patient_id: "",
+    patient_id: "",
   });
   const [DataEdit, SetEditData] = useState(null);
   const [Id, setId] = useState();
-
   const show = () => {
-    var ele = document.querySelector(".none");
-    ele.classList.toggle("form-add-income");
+    var element = document.querySelector(".none");
+    element.classList.toggle("form-add-income");
   };
 
   const [visibleAdd, isShowAdd] = useState(false);
   const [visibleEdit, isShowEdit] = useState(false);
   const [iconEdit, isShowIcon] = useState(true);
   const [iconAdd, isShowIconAdd] = useState(true);
+  const [elementId, setElementId] = useState(null);
 
   const showAdd = () => {
     if (visibleAdd === false) {
@@ -43,6 +44,7 @@ function Newborn() {
       isShowAdd(false);
     }
   };
+  console.log(elementId);
   const showEdit = () => {
     if (visibleEdit === false) {
       isShowEdit(true);
@@ -95,6 +97,7 @@ function Newborn() {
       name: "status",
       label: "status",
     },
+
     {
       name: "actions",
       label: "Actions",
@@ -179,8 +182,20 @@ function Newborn() {
   console.log(DataById);
   useEffect(() => {
     getData();
+    getDataPatient();
   }, []);
 
+  const getDataPatient = () => {
+    axios
+      .get(`${process.env.REACT_APP_URL}/patient/getAllPatients`)
+      .then((response) => {
+        setDataPatient(response.data.response);
+        console.log("Patient", DataPatient);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const handelChangePost = (e) => {
     const value = e.target.value;
     SetPostData({
@@ -255,46 +270,49 @@ function Newborn() {
               name="status"
               onChange={handelChangePost}
             />{" "}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
+            <label htmlFor="patient_id"> Patient </label>
+            <Select
+              name="patient"
+              required="required"
               onChange={handelChangePost}
-            /> */}
+            >
+              {DataPatient.map((element) => {
+                return (
+                  <MenuItem
+                    value={element._id}
+                    onClick={() => setElementId(element._id)}
+                  >{`${element.first_name} ${element.last_name}`}</MenuItem>
+                );
+              })}
+            </Select>
             <Button
               variant="outlined"
               onClick={() => {
-                if (
-                  DataPost.first_name === "" ||
-                  DataPost.middle_name === "" ||
-                  DataPost.last_name === "" ||
-                  DataPost.status === ""
-                ) {
-                  Swal.fire({
-                    title: "field is Empty !",
-                    icon: "warning",
-                    confirmButtonColor: "#447695",
+                const newData = {
+                  first_name: DataPost.first_name,
+                  middle_name: DataPost.middle_name,
+                  last_name: DataPost.last_name,
+                  status: DataPost.status,
+                  patient_id: elementId,
+                };
+                axios
+                  .post(
+                    `${process.env.REACT_APP_URL}/newBorn/addNewBorn`,
+                    newData
+                  )
+                  .then((res) => {
+                    console.log(res);
+                    getData();
+                  })
+                  .catch((err) => {
+                    console.log(err.message);
                   });
-                } else {
-                  axios
-                    .post(
-                      `${process.env.REACT_APP_URL}/newBorn/addNewBorn`,
-                      DataPost
-                    )
-                    .then((res) => {
-                      console.log(res);
-                      getData();
-                    })
-                    .catch((err) => {
-                      console.log(err.message);
-                    });
-                  Swal.fire({
-                    title: "NewBorn created",
-                    icon: "success",
-                    iconColor: "#d0e9e7",
-                    confirmButtonColor: "#447695",
-                  });
-                }
+                Swal.fire({
+                  title: "NewBorn created",
+                  icon: "success",
+                  iconColor: "#d0e9e7",
+                  confirmButtonColor: "#447695",
+                });
               }}
             >
               Submit
