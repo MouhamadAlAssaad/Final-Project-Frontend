@@ -68,13 +68,13 @@
 
 .flip-card-front {
   background-color: #240d29;
-  border: 4px solid #c143da;
+  /* border: 4px solid #c143da; */
 }
 
 .profile-image {
-  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
-  margin-top: 15px;
+  margin-top: 80px;
   border-radius: 5em;
   width: 120px;
   height: 120px;
@@ -89,7 +89,7 @@
 .name {
   margin-top: 15px;
   font-size: 27px;
-  color: #c143da;
+  color: white;
   font-weight: bold;
 }
 
@@ -161,13 +161,13 @@
 
 .flip-card-front {
   background-color: var(--secondary);
-  border: 4px solid var(--accent);
+  /* border: 4px solid var(--accent); */
 }
 
 .profile-image {
   background-color: transparent;
   border: none;
-  margin-top: 15px;
+  margin-top: 80px;
   border-radius: 5em;
   width: 120px;
   height: 120px;
@@ -182,7 +182,7 @@
 .name {
   margin-top: 15px;
   font-size: 27px;
-  color: var(--accent);
+  color: white;
   font-weight: bold;
 }
 
@@ -255,13 +255,13 @@
 
 .flip-card-front {
   background-color: #c57f7a;
-  border: 2px solid #684969;
+  /* border: 2px solid #684969; */
 }
 
 .profile-image {
-  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
-  margin-top: 15px;
+  margin-top: 80px;
   border-radius: 5em;
   width: 120px;
   height: 120px;
@@ -276,7 +276,7 @@
 .name {
   margin-top: 15px;
   font-size: 27px;
-  color: #684969;
+  color: white;
   font-weight: bold;
 }
 
@@ -334,6 +334,58 @@
   letter-spacing: 1px;
 }
 
+.pregn-tips {
+  display: flex;
+  justify-content: center;
+  padding: 31px;
+  font-size: 4.5rem;
+  letter-spacing: 1px;
+}
+
+.befor-preg-title {
+  display: flex;
+  justify-content: center;
+  padding: 31px;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+
+.during-preg-title {
+  display: flex;
+  justify-content: center;
+  padding: 31px;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.after-preg-title {
+  display: flex;
+  justify-content: center;
+  padding: 31px;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+}
+
+.bef-pregn-tipsss {
+  display: flex;
+}
+
+.home-page-tips {
+  margin: 30px;
+}
+
+.befor-pregnancy-tips {
+  margin-bottom: 20px;
+}
+
+.dur-pregn-tipsss {
+  display: flex;
+}
+
+.after-pregn-tipsss {
+  display: flex;
+}
 
 @media (max-width: 1200px) {
   .hero-section-img {
@@ -346,3 +398,134 @@
     align-items: center;
   }
 }
+
+
+
+
+
+
+/* CSS for Before Pregnancy Tips section */
+
+.befor-pregnancy-tips {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.befor-pregnancy-tips .bef-pregn-tipsss {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  margin-top: 20px;
+}
+
+.befor-pregnancy-tips h1.befor-preg-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.befor-pregnancy-tips h3 {
+  font-size: 30px ;
+  margin-bottom: 10px;
+}
+
+.befor-pregnancy-tips p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+/* CSS for During Pregnancy Tips section */
+
+
+.during-pregnancy-tips {
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.during-pregnancy-tips .dur-pregn-tipsss {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  margin-top: 20px;
+}
+
+.during-pregnancy-tips h1.during-preg-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.during-pregnancy-tips h3 {
+  font-size: 30px ;
+  margin-bottom: 10px;
+}
+
+.during-pregnancy-tips p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* CSS for After Pregnancy Tips section */
+
+.after-pregnancy-tips {
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.after-pregnancy-tips .after-pregn-tipsss {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  margin-top: 20px;
+}
+
+.after-pregnancy-tips h1.after-preg-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.after-pregnancy-tips h3 {
+  font-size: 30px ;
+  margin-bottom: 10px;
+}
+
+.after-pregnancy-tips p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+
+
+/* Animation for Before Pregnancy Tips section
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.first-befor-tip,
+.second-befor-tip,
+.third-befor-tip,
+.fourth-befor-tip {
+  animation: fadeIn 0.5s ease-in-out forwards;
+} */

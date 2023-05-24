@@ -49,6 +49,11 @@ export const SidebarData = [
     icon: AddShoppingCartIcon,
     heading: "Appointment",
   },
+  {
+    path: "dashboard-Inbox",
+    icon: AddShoppingCartIcon,
+    heading: "Inbox",
+  },
 
   
 ];

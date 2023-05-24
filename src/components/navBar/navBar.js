@@ -36,9 +36,13 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-              Tips
-            </Link>
+          <a
+              href="#tips"
+              className="nav-links"
+              onClick={closeMobileMenu}
+            >
+              Tips <i className="fas fa-caret-down" />
+            </a>
           </li>
           <li className="nav-item">
             <Link

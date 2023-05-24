@@ -2,9 +2,6 @@ import React, { useState, useEffect ,useContext } from 'react';
 import axios from 'axios';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import format from 'date-fns/format';
-// import parse from 'date-fns/parse';
-// import startOfWeek from 'date-fns/startOfWeek';
-// import getDay from 'date-fns/getDay';
 import enUS from 'date-fns/locale/en-US';
 import '../calendar/calendar.scss';
 import { parse, startOfWeek, getDay } from 'date-fns';
@@ -32,7 +29,7 @@ const Calendars = (props) => {
     axios.get(`${process.env.REACT_APP_URL}/appointment/`)
       .then(response => {
         const transformedEvents = response.data.response.map(event => ({
-          title: `${event.patient.first_name} ${event.patient.middle_name} ${event.patient.last_name}`,
+          title: `${event.first_name} ${event.last_name} `,
           start: new Date(event.date),
           end: new Date(new Date(event.date).getTime() + 30 * 60000),
           allDay: false,

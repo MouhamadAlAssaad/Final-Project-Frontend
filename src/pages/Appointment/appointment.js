@@ -106,7 +106,7 @@ function Appointment() {
                         `${process.env.REACT_APP_URL}/appointment/getAppoitment/${tableMeta.rowData[0]}`
                       )
                       .then((response) => {
-                        setDataById(response.data.response);
+                        setDataById(response.data.data);
                         setId(tableMeta.rowData[0]);
                         show();
                         showiconAdd();
@@ -181,6 +181,8 @@ function Appointment() {
     });
     console.log(DataPost);
   };
+
+  console.log(DataById)
 
   const EditData = () => {
     axios

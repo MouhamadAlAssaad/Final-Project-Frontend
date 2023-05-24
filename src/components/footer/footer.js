@@ -54,26 +54,26 @@ class Footer extends Component {
                   {" "}
                   <FaMapMarkerAlt color="#e0afa0" />
                 </Link>{" "}
-                Beirut/London
+                Akkar/Lebanon
               </p>
               <p>
-                <a to="mailto:team@concat.tech" target="_blank">
+                <a to="mailto:wardchrayteh@gmail.com" target="_blank">
                   <FaEnvelope size={20} color="#e0afa0" />{" "}
                 </a>
-                team@concat.tech
+                wardchrayteh@gmail.com
               </p>
             </div>
             <div className="footer-social">
               <h4>Follow Us</h4>
               <ul>
                 <li>
-                  <Link to="https://www.facebook.com/concatdev/" target="_blank">
+                  <Link to="" target="_blank">
                     <TiSocialFacebook />
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="https://www.linkedin.com/company/concattech/"
+                    to=""
                     target="_blank"
                   >
                     <TiSocialLinkedin />
@@ -81,7 +81,7 @@ class Footer extends Component {
                 </li>
                 <li>
                   <Link
-                    to="https://www.instagram.com/concat.tech/"
+                    to=""
                     target="_blank"
                   >
                     <TiSocialInstagram />
@@ -89,16 +89,7 @@ class Footer extends Component {
                 </li>
               </ul>
             </div>
-            <form className="footer-links" onSubmit={this.postEmail}>
-              <ul>
-                <h4>Sign up for Newsletter</h4>
-                <input type="email" placeholder="Email" onChange={this.getEmail}></input>
-                <br></br>
-                <button type="submit" className="subscribe" >
-                  Subscribe
-                </button>
-              </ul>
-            </form>
+            
           </div>
         </footer>
       

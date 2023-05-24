@@ -17,6 +17,7 @@ import MainDashboard from "./pages/MainDashboard/MainDashboard";
 import Unauthorized from "./pages/Unauthorized/Unauthorized";
 import PrivateRoutes from "./Utils/PrivateRoutes";
 import Footer from "./components/footer/footer";
+import Inbox from "./pages/Inbox/inbox";
 
 function App() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
             <Route path="dashboard-Expenses" element={<Expenses />} />
             <Route path="dashboard-Income" element={<Income />} />
             <Route path="dashboard-Appointment" element={<Appointment />} />
+            <Route path="dashboard-Inbox" element={<Inbox />} />
           </Route>
         </Route>
         <Route path="Login" element={<Login />} />
