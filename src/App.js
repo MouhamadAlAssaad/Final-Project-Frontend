@@ -45,7 +45,7 @@ function App() {
             <Route path="dashboard-Inbox" element={<Inbox />}/>
           </Route>
         </Route>
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
       </Routes>
       <Footer/>
