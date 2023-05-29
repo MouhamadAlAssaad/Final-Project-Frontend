@@ -42,7 +42,7 @@ function App() {
             <Route path="dashboard-Expenses" element={<Expenses />} />
             <Route path="dashboard-Income" element={<Income />} />
             <Route path="dashboard-Appointment" element={<Appointment />} />
-            <Route path="dashboard-Inbox" element={<Inbox />} />
+            <Route path="dashboard-Inbox" element={<Inbox />}/>
           </Route>
         </Route>
         <Route path="Login" element={<Login />} />
