@@ -272,7 +272,7 @@ function Appointment() {
                       console.log(err.message);
                     });
                   Swal.fire({
-                    title: "Treatment created",
+                    title: "Appointment created",
                     icon: "success",
                     iconColor: "#d0e9e7",
                     confirmButtonColor: "#447695",

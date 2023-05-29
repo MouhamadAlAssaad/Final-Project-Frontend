@@ -45,13 +45,13 @@ function Navbar() {
             </a>
           </li>
           <li className="nav-item">
-            <Link
-              to="/"
+          <a
+              href="#contact"
               className="nav-links"
               onClick={closeMobileMenu}
             >
-              Contact Us
-            </Link>
+              Contact Us <i className="fas fa-caret-down" />
+            </a>
           </li>
         </ul>
       </nav>

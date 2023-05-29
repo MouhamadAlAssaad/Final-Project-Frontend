@@ -98,116 +98,136 @@ export default function Home() {
           <h1 className="befor-preg-title">Before Pregnancy</h1>
 
           <div className="bef-pregn-tipsss">
-            <div className="first-befor-tip">
-              <h3>1-Preconception Care</h3>
-              <p>
-                Seek preconception care to optimize your health before getting
-                pregnant. This may involve reviewing your medical history,
-                assessing any chronic conditions, and making necessary lifestyle
-                changes.
-              </p>
+            <div className="box-1">
+              <div className="first-befor-tip">
+                <h3>1-Preconception Care</h3>
+                <p>
+                  Seek preconception care to optimize your health before getting
+                  pregnant. This may involve reviewing your medical history,
+                  assessing any chronic conditions, and making necessary
+                  lifestyle changes.
+                </p>
+              </div>
+              <div className="second-befor-tip">
+                <h3>2-Nutrition and Supplements</h3>
+                <p>
+                  Focus on a well-balanced diet that includes a variety of
+                  fruits, vegetables, whole grains, lean proteins, and healthy
+                  fats. Discuss the need for prenatal vitamins and supplements
+                  like folic acid with your midwife.
+                </p>
+              </div>
             </div>
-            <div className="second-befor-tip">
-              <h3>2-Nutrition and Supplements</h3>
-              <p>
-                Focus on a well-balanced diet that includes a variety of fruits,
-                vegetables, whole grains, lean proteins, and healthy fats.
-                Discuss the need for prenatal vitamins and supplements like
-                folic acid with your midwife.
-              </p>
-            </div>
-            <div className="third-befor-tip">
-              <h3>3-Lifestyle Choices</h3>
-              <p>
-                Avoid smoking, alcohol, and illicit drugs. Maintain a healthy
-                weight and engage in regular exercise.
-              </p>
-            </div>
-            <div className="fourth-befor-tip">
-              <h3>4-Genetic Testing</h3>
-              <p>
-                Consider genetic testing or counseling if you have a family
-                history of genetic disorders or concerns.
-              </p>
+            <div className="box-2">
+              <div className="third-befor-tip">
+                <h3>3-Lifestyle Choices</h3>
+                <p>
+                  Avoid smoking, alcohol, and illicit drugs. Maintain a healthy
+                  weight and engage in regular exercise.
+                </p>
+              </div>
+              <div className="fourth-befor-tip">
+                <h3>4-Genetic Testing</h3>
+                <p>
+                  Consider genetic testing or counseling if you have a family
+                  history of genetic disorders or concerns.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div className="during-pregnancy-tips">
-         
-            <h1 className="during-preg-title">During Pregnancy</h1>
-         
+          <h1 className="during-preg-title">During Pregnancy</h1>
+
           <div className="dur-pregn-tipsss">
-            <div className="first-dur-tip">
-              <h3>1-Prenatal Care</h3>
-              <p>
-                Attend regular prenatal check-ups with your midwife to monitor
-                your health and the development of the baby.
-              </p>
+            <div className="box-1">
+              <div className="first-dur-tip">
+                <h3>1-Prenatal Care</h3>
+                <p>
+                  Attend regular prenatal check-ups with your midwife to monitor
+                  your health and the development of the baby.
+                </p>
+              </div>
+              <div className="second-dur-tip">
+                <h3>2-Nutrition</h3>
+                <p>
+                  Engage in regular low-impact exercises approved by your
+                  midwife. Avoid activities with a high risk of falling or
+                  injury.
+                </p>
+              </div>
             </div>
-            <div className="second-dur-tip">
-              <h3>2-Nutrition</h3>
-              <p>
-                Engage in regular low-impact exercises approved by your midwife.
-                Avoid activities with a high risk of falling or injury.
-              </p>
-            </div>
-            <div className="third-dur-tip">
-              <h3>3-Exercise</h3>
-              <p>
-                Avoid smoking, alcohol, and illicit drugs. Maintain a healthy
-                weight and engage in regular exercise.
-              </p>
-            </div>
-            <div className="fourth-dur-tip">
-              <h3>4-Birth Plan</h3>
-              <p>
-                Discuss your birth preferences and create a birth plan with your
-                midwife, outlining your preferences for pain management, labor
-                positions, and other aspects of the birthing process.
-              </p>
+
+            <div className="box-2">
+              <div className="third-dur-tip">
+                <h3>3-Exercise</h3>
+                <p>
+                  Avoid smoking, alcohol, and illicit drugs. Maintain a healthy
+                  weight and engage in regular exercise.
+                </p>
+              </div>
+
+              <div className="fourth-dur-tip  ">
+                <h3>4-Birth Plan</h3>
+                <p>
+                  Discuss your birth preferences and create a birth plan with
+                  your midwife, outlining your preferences for pain management,
+                  labor positions, and other aspects of the birthing process.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="after-pregnancy-tips">
-          
-            <h1 className="after-preg-title">After Pregnancy</h1>
-          
+          <h1 className="after-preg-title">After Pregnancy</h1>
+
           <div className="after-pregn-tipsss">
-            <div className="first-after-tip">
-              <h3>1-Postpartum Care</h3>
-              <p>
-                Schedule postpartum check-ups with your midwife to monitor your
-                recovery and ensure the well-being of both you and your baby.
-              </p>
+            <div className="box-1">
+              <div className="first-after-tip">
+                <h3>1-Postpartum Care</h3>
+                <p>
+                  Schedule postpartum check-ups with your midwife to monitor
+                  your recovery and ensure the well-being of both you and your
+                  baby.
+                </p>
+              </div>
+              <div className="second-after-tip">
+                <h3>2-Breastfeeding Support</h3>
+                <p>
+                  Seek guidance and support from your midwife to establish
+                  successful breastfeeding. Attend breastfeeding classes if
+                  available.
+                </p>
+              </div>
             </div>
-            <div className="second-after-tip">
-              <h3>2-Breastfeeding Support</h3>
-              <p>
-                Seek guidance and support from your midwife to establish
-                successful breastfeeding. Attend breastfeeding classes if
-                available.
-              </p>
-            </div>
-            <div className="third-after-tip">
-              <h3>3-Emotional Support</h3>
-              <p>
-                Recognize and address any postpartum mood disorders or emotional
-                challenges. Communicate with your midwife or healthcare provider
-                if you experience symptoms of postpartum depression or anxiety.
-              </p>
-            </div>
-            <div className="fourth-after-tip">
-              <h3>4-Physical Recovery</h3>
-              <p>
-                Take care of your body by getting plenty of rest, practicing
-                gentle exercises as advised, and maintaining a nutritious diet.
-              </p>
+
+            <div className="box-2">
+              <div className="third-after-tip">
+                <h3>3-Emotional Support</h3>
+                <p>
+                  Recognize and address any postpartum mood disorders or
+                  emotional challenges. Communicate with your midwife or
+                  healthcare provider if you experience symptoms of postpartum
+                  depression or anxiety.
+                </p>
+              </div>
+              <div className="fourth-after-tip">
+                <h3>4-Physical Recovery</h3>
+                <p>
+                  Take care of your body by getting plenty of rest, practicing
+                  gentle exercises as advised, and maintaining a nutritious
+                  diet.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <Contact/>
+      <section className="contactus-section" id="contact">
+        <h1 className="pregn-tips">CONTACT US</h1>
+
+        <Contact />
       </section>
     </>
   );

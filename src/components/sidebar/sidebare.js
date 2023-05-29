@@ -5,11 +5,13 @@ import { motion } from "framer-motion";
 import { SidebarData } from "./data";
 import { Navigate, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import logo from "../images/logo.svg";
+import Cookies from "universal-cookie";
 
 const Sidebar = ({ userData }) => {
   const [selected, setSelected] = useState();
+  const navigate=useNavigate();
   const [expanded, setExpanded] = useState(false);
   const [loggedOut, setLoggedOut] = useState(false);
 
@@ -27,11 +29,12 @@ const Sidebar = ({ userData }) => {
     },
   };
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-
-    setLoggedOut(true);
-  };
+  const handelSignOut =()=>{
+    const cookies = new Cookies;
+    cookies.remove('admin-token');
+    navigate('/');
+  }
+ 
 
   return (
     <>
@@ -69,6 +72,10 @@ const Sidebar = ({ userData }) => {
                 </NavLink>
               );
             })}
+            <div className="logoutButton" onClick={handelSignOut}>
+              <LogoutIcon />
+              <span>Logout</span>
+            </div>
           </div>
         </motion.div>
       </div>

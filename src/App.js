@@ -31,7 +31,7 @@ function App() {
       {isDashLogin && <NavBar /> }
 
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/" element={<PrivateRoutes />}>
           <Route path="/" element={<MainDashboard />}>
             <Route path="dashboard-home" element={<Dashboard />} />

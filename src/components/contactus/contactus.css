@@ -5,55 +5,61 @@
 } */
 
 .contactUs {
-    background-color: #f5f5f5;
-    padding: 20px;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.styled-input {
+  margin-bottom: 20px;
+}
+
+.styled-input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.styled-input input,
+.styled-input textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-cont {
+  text-align: right;
+}
+
+.submit-btnnnn {
+  background: linear-gradient(#684969 0%, #ec9682 100%);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btnnnn:hover {
+  background: linear-gradient(#684969 0%, #ec9682 0%);
+}
+
+@media only screen and (max-width: 360px) {
+  .contactUs{
+    display: flex;
+    flex-direction: row;
   }
-  
-  .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .input-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .styled-input {
-    margin-bottom: 20px;
-  }
-  
-  .styled-input label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .styled-input input,
-  .styled-input textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn-cont {
-    text-align: right;
-  }
-  
-  .submit-btnnnn {
-    background: linear-gradient( #684969 0%, #ec9682 100%);
-    color: #fff;
-    border: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submit-btnnnn:hover {
-    background: linear-gradient( #684969 0%, #ec9682 0%);
-  }
-  
+}

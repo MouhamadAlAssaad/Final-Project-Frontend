@@ -183,7 +183,7 @@
 .side-comp__menu {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   margin: 0 10px;
 
 }
@@ -215,6 +215,15 @@
   line-height: 14px;
   color: var(--primary);
 }
+
+
+.logoutButton{
+  color: #fff;
+  margin-left: 55px;
+}
+
+
+
 
 .active {
   background: var(--secondary);

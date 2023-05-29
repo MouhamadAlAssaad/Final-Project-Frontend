@@ -6,9 +6,14 @@ import Face3Icon from '@mui/icons-material/Face3';
 import VaccinesIcon from '@mui/icons-material/Vaccines';
 import ChildCareIcon from '@mui/icons-material/ChildCare';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+
+
 
 // Sidebar Data
 export const SidebarData = [
+  
   {
     path: "dashboard-home",
     icon: DashboardIcon,
@@ -54,6 +59,11 @@ export const SidebarData = [
     icon: AddShoppingCartIcon,
     heading: "Inbox",
   },
+  // {
+  //   path: "/#home",
+  //   icon: LogoutIcon,
+  //   heading: "Logout",
+  // },
 
   
 ];
