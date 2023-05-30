@@ -6,9 +6,12 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./treatment.css";
+import Loader from "../../components/loader/loader";
+
 
 function Treatment() {
   const [Data, setData] = useState();
+  const [Loading, setLoading] = useState(true);
   const [DataById, setDataById] = useState({
     name: "",
     type: "",
@@ -157,6 +160,7 @@ function Treatment() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -199,6 +203,12 @@ function Treatment() {
 
   return (
     <div className="treatmentss">
+            {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add treatment */}
         {visibleAdd && (
@@ -329,6 +339,8 @@ function Treatment() {
           />
         </div>
       </div>
+     </> )}
+
     </div>
   );
 }

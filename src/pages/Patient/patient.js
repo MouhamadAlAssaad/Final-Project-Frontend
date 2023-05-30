@@ -6,8 +6,10 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./patient.css";
+import Loader from "../../components/loader/loader";
 
 function Patient() {
+  const [Loading, setLoading] = useState(true);
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
     first_name: "",
@@ -284,6 +286,7 @@ function Patient() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -325,6 +328,12 @@ function Patient() {
 
   return (
     <div className="patientss">
+          {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add patient */}
         {visibleAdd && (
@@ -811,6 +820,8 @@ function Patient() {
           />
         </div>
       </div>
+     </> )}
+
     </div>
   );
 }

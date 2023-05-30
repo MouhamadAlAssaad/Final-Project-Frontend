@@ -6,8 +6,10 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./admin.css";
+import Loader from "../../components/loader/loader.js"
 
 function Admin() {
+  const [Loading, setLoading] = useState(true);
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
     username: "",
@@ -87,10 +89,7 @@ function Admin() {
       name: "password",
       label: "Password",
     },
-    // {
-    //   name: "status",
-    //   label: "status",
-    // },
+ 
     {
       name: "actions",
       label: "Actions",
@@ -167,6 +166,7 @@ function Admin() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -209,6 +209,12 @@ function Admin() {
 
   return (
     <div className="adminss">
+        {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add expense */}
         {visibleAdd && (
@@ -245,18 +251,7 @@ function Admin() {
               name="password"
               onChange={handelChangePost}
             />
-            {/* <label htmlFor="status"> status</label>
-            <TextField
-              type="text"
-              name="status"
-              onChange={handelChangePost}
-            />{" "} */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              onChange={handelChangePost}
-            /> */}
+      
             <Button
               variant="outlined"
               onClick={() => {
@@ -333,20 +328,7 @@ function Admin() {
               defaultValue={DataById.password}
               onChange={handelChangeEdit}
             />
-            {/* <label htmlFor="status"> Status</label>
-            <TextField
-              type="text"
-              name="status"
-              defaultValue={DataById.status}
-              onChange={handelChangeEdit}
-            /> */}
-            {/* <label htmlFor="patient_id"> Patient Id</label>
-            <TextField
-              type="text"
-              name="patient_id"
-              defaultValue={DataById.patient_id}
-              onChange={handelChangeEdit}
-            /> */}
+        
             <Button variant="outlined" onClick={EditData}>
               Edit Admin
             </Button>
@@ -379,6 +361,7 @@ function Admin() {
           />
         </div>
       </div>
+     </> )}
     </div>
   );
 }

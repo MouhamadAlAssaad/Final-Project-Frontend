@@ -6,9 +6,12 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./expenses.css";
+import Loader from "../../components/loader/loader";
 
 function Expenses() {
   const [Data, setData] = useState();
+  const [Loading, setLoading] = useState(true);
+
   const [DataById, setDataById] = useState({
     description: "",
     amount: "",
@@ -167,6 +170,7 @@ function Expenses() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -209,10 +213,16 @@ function Expenses() {
 
   return (
     <div className="expensesss">
+         {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add expense */}
         {visibleAdd && (
-          <form> 
+          <form>
             <div className="head-form">
               <h2>Add Expense</h2>
               <button
@@ -240,11 +250,7 @@ function Expenses() {
               onChange={handelChangePost}
             />
             <label htmlFor="date"> Date </label>
-            <TextField
-              type="date"
-              name="date"
-              onChange={handelChangePost}
-            />
+            <TextField type="date" name="date" onChange={handelChangePost} />
             {/* <label htmlFor="status"> status</label>
             <TextField
               type="text"
@@ -260,7 +266,11 @@ function Expenses() {
             <Button
               variant="outlined"
               onClick={() => {
-                if (DataPost.description === "" || DataPost.amount === "" || DataPost.date === "") {
+                if (
+                  DataPost.description === "" ||
+                  DataPost.amount === "" ||
+                  DataPost.date === ""
+                ) {
                   Swal.fire({
                     title: "field is Empty !",
                     icon: "warning",
@@ -268,10 +278,7 @@ function Expenses() {
                   });
                 } else {
                   axios
-                    .post(
-                      `${process.env.REACT_APP_URL}/expenses/`,
-                      DataPost
-                    )
+                    .post(`${process.env.REACT_APP_URL}/expenses/`, DataPost)
                     .then((res) => {
                       console.log(res);
                       getData();
@@ -350,9 +357,7 @@ function Expenses() {
         )}
       </div>
       <div className="expense_table">
-       
-          <h3 className="pagetitle">Expenses</h3>
-        
+        <h3 className="pagetitle">Expenses</h3>
 
         <div className="table_mui">
           <MUIDataTable
@@ -375,9 +380,9 @@ function Expenses() {
           />
         </div>
       </div>
+      </> )}
     </div>
   );
 }
 
 export default Expenses;
-

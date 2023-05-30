@@ -6,9 +6,11 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./income.css";
+import Loader from "../../components/loader/loader";
 
 function Income() {
   const [Data, setData] = useState();
+  const [Loading, setLoading] = useState(true);
   const [DataById, setDataById] = useState({
     description: "",
     amount: "",
@@ -168,6 +170,7 @@ function Income() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -210,6 +213,12 @@ function Income() {
 
   return (
     <div className="incomessss">
+            {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add income */}
         {visibleAdd && (
@@ -376,6 +385,8 @@ function Income() {
           />
         </div>
       </div>
+     </> )}
+
     </div>
   );
 }

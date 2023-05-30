@@ -6,9 +6,12 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./appointment.css";
+import Loader from "../../components/loader/loader.js";
 
 function Appointment() {
   const [Data, setData] = useState();
+  const [Loading, setLoading] = useState(true);
+
   const [DataById, setDataById] = useState({
     first_name: "",
     last_name: "",
@@ -163,6 +166,7 @@ function Appointment() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -207,6 +211,12 @@ function Appointment() {
 
   return (
     <div className="treatmentss">
+      {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add treatment */}
         {visibleAdd && (
@@ -354,6 +364,7 @@ function Appointment() {
           />
         </div>
       </div>
+      </> )}
     </div>
   );
 }

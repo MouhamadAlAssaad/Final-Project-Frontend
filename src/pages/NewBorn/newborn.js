@@ -6,9 +6,11 @@ import { AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import "./newborn.css";
+import Loader from "../../components/loader/loader";
 
 function Newborn() {
   const [DataPatient, setDataPatient] = useState([]);
+  const [Loading, setLoading] = useState(true);
   const [Data, setData] = useState();
   const [DataById, setDataById] = useState({
     first_name: "",
@@ -174,6 +176,7 @@ function Newborn() {
       .then((response) => {
         console.log(response);
         setData(response.data.response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -228,6 +231,12 @@ function Newborn() {
 
   return (
     <div className="newbornss">
+           {Loading ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <>
       <div className="none">
         {/* for add expense */}
         {visibleAdd && (
@@ -400,6 +409,8 @@ function Newborn() {
           />
         </div>
       </div>
+     </> )}
+
     </div>
   );
 }
