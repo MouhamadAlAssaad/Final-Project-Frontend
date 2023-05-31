@@ -554,10 +554,28 @@
 
 
 
-@media (min-width: 375px) {
+@media (max-width: 400px) {
  .bef-pregn-tipsss {
     display: flex;
     flex-direction: column;
+  }
+
+  .pregn-tips{
+    font-size: 3rem;
+  }
+  .hero-section-desc h1{
+    font-size: 3rem;
+    margin: 0;
+  }
+  .home-page-hero-section {
+    padding-inline: 2rem;
+  }
+  .flower{
+    transform: translateX(-50px) translateY(20px);
+  }
+
+  .hero-section-desc{
+    margin-bottom: 0;
   }
 }
 
