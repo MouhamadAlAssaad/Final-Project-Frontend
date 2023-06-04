@@ -1,3 +1,8 @@
+*{
+  scroll-behavior: smooth;
+
+}
+
 .home-page-hero-section {
   display: flex;
   align-items: center;
@@ -548,6 +553,9 @@
 .after-pregnancy-tips p {
   font-size: 20px;
   line-height: 1.5;
+}
+.prenatalimg , .laborandbirthlimg, .postparyumimg {
+  width: 70px;
 }
 
 

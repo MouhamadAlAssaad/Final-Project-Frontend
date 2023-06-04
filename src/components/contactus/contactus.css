@@ -1,9 +1,3 @@
-/* .contactUs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
 .contactUs {
   background-color: #f5f5f5;
   padding: 20px;
@@ -44,17 +38,18 @@
 }
 
 .submit-btnnnn {
-  background: linear-gradient(#684969 0%, #ec9682 100%);
+  /* background: linear-gradient(#684969 0%, #ec9682 100%); */
   color: #fff;
   border: none;
   font-weight: bold;
   padding: 10px 20px;
+  background: #ec9682;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .submit-btnnnn:hover {
-  background: linear-gradient(#684969 0%, #ec9682 0%);
+  background: #684969;
 }
 
 @media only screen and (max-width: 360px) {

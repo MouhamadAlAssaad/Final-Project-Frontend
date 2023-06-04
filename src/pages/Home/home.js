@@ -3,6 +3,9 @@ import Contact from "../../components/contactus/contactus";
 import heroImage from "../../components/images/5111593.jpg";
 import flowe from "../../components/images/flower.svg";
 import "./home.css";
+import prenatal from "./prenatal-care.png";
+import birthcare from "./baby-weight.png";
+import postnatal from "./maternity.png";
 
 export default function Home() {
   return (
@@ -31,7 +34,8 @@ export default function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <div className="profile-image">
-                  <div className="name">Prenatal Care</div>
+                  <img className="prenatalimg" src={prenatal} />
+                  <div className="name"> Prenatal Care</div>
                 </div>
               </div>
               <div className="flip-card-back">
@@ -52,7 +56,8 @@ export default function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <div className="profile-image">
-                  <div className="name">Labor and Birth Support</div>
+                  <img className="laborandbirthlimg" src={birthcare} />
+                  <div className="name"> Labor and Birth Support</div>
                 </div>
               </div>
               <div className="flip-card-back">
@@ -72,6 +77,7 @@ export default function Home() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <div className="profile-image">
+                  <img className="postparyumimg" src={postnatal} />
                   <div className="name">Postpartum Care</div>
                 </div>
               </div>
